@@ -1,0 +1,83 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background hexagon pattern -->
+  <defs>
+    <pattern id="hexPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="none" stroke="#333" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Gradients -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4FFFB0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7ED321;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="networkGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4FFFB0;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7ED321;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="#1a1a1a"/>
+  <rect width="400" height="400" fill="url(#hexPattern)"/>
+  
+  <!-- Main shield shape -->
+  <g transform="translate(200, 200)">
+    <!-- Shield outline -->
+    <path d="M-80,-100 L-80,-20 L-40,40 L0,60 L40,40 L80,-20 L80,-100 L-80,-100 Z" 
+          fill="url(#shieldGradient)" 
+          stroke="#fff" 
+          stroke-width="3"
+          opacity="0.9"/>
+    
+    <!-- Inner shield -->
+    <path d="M-60,-80 L-60,-10 L-30,30 L0,45 L30,30 L60,-10 L60,-80 L-60,-80 Z" 
+          fill="rgba(0,0,0,0.8)" 
+          stroke="#333" 
+          stroke-width="1"/>
+    
+    <!-- Magnifying glass handle -->
+    <circle cx="15" cy="15" r="25" fill="none" stroke="#fff" stroke-width="4"/>
+    <circle cx="15" cy="15" r="20" fill="rgba(0,0,0,0.9)" stroke="#ddd" stroke-width="2"/>
+    <line x1="35" y1="35" x2="50" y2="50" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <line x1="35" y1="35" x2="50" y2="50" stroke="#ccc" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Network nodes inside magnifying glass -->
+    <g clip-path="circle(20px at 15px 15px)">
+      <!-- Central node -->
+      <circle cx="15" cy="15" r="2" fill="#00D4FF"/>
+      
+      <!-- Surrounding nodes -->
+      <circle cx="5" cy="8" r="1.5" fill="#4FFFB0"/>
+      <circle cx="25" cy="8" r="1.5" fill="#7ED321"/>
+      <circle cx="8" cy="22" r="1.5" fill="#4FFFB0"/>
+      <circle cx="22" cy="22" r="1.5" fill="#00D4FF"/>
+      <circle cx="15" cy="5" r="1.5" fill="#7ED321"/>
+      <circle cx="15" cy="25" r="1.5" fill="#4FFFB0"/>
+      <circle cx="5" cy="15" r="1.5" fill="#7ED321"/>
+      <circle cx="25" cy="15" r="1.5" fill="#00D4FF"/>
+      
+      <!-- Connections -->
+      <line x1="15" y1="15" x2="5" y2="8" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="25" y2="8" stroke="#4FFFB0" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="8" y2="22" stroke="#7ED321" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="22" y2="22" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="15" y2="5" stroke="#4FFFB0" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="15" y2="25" stroke="#7ED321" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="5" y2="15" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+      <line x1="15" y1="15" x2="25" y2="15" stroke="#4FFFB0" stroke-width="1" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(200, 320)">
+    <text x="0" y="0" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="36" font-weight="bold">
+      Deep<tspan fill="#7ED321">Check</tspan>
+    </text>
+    <text x="0" y="25" text-anchor="middle" fill="#ccc" font-family="Arial, sans-serif" font-size="14" opacity="0.8">
+      AI for Truth &amp; Transparency
+    </text>
+  </g>
+</svg>

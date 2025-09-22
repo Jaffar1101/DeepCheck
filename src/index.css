@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic AI vs Human Design System */
+
+@layer base {
+  :root {
+    /* Galaxy Dark Theme */
+    --background: 220 15% 6%;
+    --foreground: 200 20% 95%;
+
+    /* Cards with glassmorphism */
+    --card: 220 15% 8%;
+    --card-foreground: 200 20% 95%;
+
+    /* Neon AI Colors */
+    --primary-ai: 280 100% 70%;
+    --primary-ai-glow: 280 100% 80%;
+    --primary-ai-foreground: 220 15% 6%;
+
+    /* Human Authenticity Colors */
+    --primary-human: 160 100% 60%;
+    --primary-human-glow: 160 100% 70%;
+    --primary-human-foreground: 220 15% 6%;
+
+    /* Accent Neons */
+    --accent-cyan: 180 100% 60%;
+    --accent-purple: 260 100% 70%;
+    --accent-pink: 320 100% 70%;
+    --accent-orange: 30 100% 65%;
+
+    /* System Colors */
+    --primary: 280 100% 70%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 200 20% 85%;
+
+    --muted: 220 15% 10%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 280 100% 70%;
+    --accent-foreground: 220 15% 6%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 200 20% 95%;
+
+    --success: 160 100% 60%;
+    --success-foreground: 220 15% 6%;
+
+    --warning: 30 100% 65%;
+    --warning-foreground: 220 15% 6%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 280 100% 70%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-ai: linear-gradient(135deg, hsl(280 100% 70%) 0%, hsl(320 100% 70%) 100%);
+    --gradient-human: linear-gradient(135deg, hsl(160 100% 60%) 0%, hsl(180 100% 60%) 100%);
+    --gradient-galaxy: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(260 20% 8%) 50%, hsl(280 15% 10%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-neon: linear-gradient(90deg, hsl(280 100% 70%), hsl(320 100% 70%), hsl(180 100% 60%));
+
+    /* Shadows & Glows */
+    --shadow-ai: 0 0 30px hsl(280 100% 70% / 0.3);
+    --shadow-human: 0 0 30px hsl(160 100% 60% / 0.3);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --glow-intense: 0 0 50px currentColor;
+    --glow-soft: 0 0 20px currentColor;
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar */
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 200 20% 85%;
+    --sidebar-primary: 280 100% 70%;
+    --sidebar-primary-foreground: 220 15% 6%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 200 20% 85%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 280 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    background: var(--gradient-galaxy);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-orbitron;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-ai-glow));
+  }
+}
+
+@layer components {
+
+  /* Glassmorphism */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Neon glow effects */
+  .glow-ai {
+    box-shadow: var(--shadow-ai);
+    animation: pulse-ai 3s ease-in-out infinite;
+  }
+
+  .glow-human {
+    box-shadow: var(--shadow-human);
+    animation: pulse-human 3s ease-in-out infinite;
+  }
+
+  .glow-soft {
+    box-shadow: var(--glow-soft);
+  }
+
+  .glow-intense {
+    box-shadow: var(--glow-intense);
+  }
+
+  /* Gradient text */
+  .gradient-ai-text {
+    background: var(--gradient-ai);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-human-text {
+    background: var(--gradient-human);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-neon-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@layer utilities {
+
+  /* Font families */
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Keyframe animations */
+@keyframes pulse-ai {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(280 100% 70% / 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsl(280 100% 70% / 0.6);
+  }
+}
+
+@keyframes pulse-human {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(160 100% 60% / 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsl(160 100% 60% / 0.6);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
