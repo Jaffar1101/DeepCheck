@@ -94,12 +94,7 @@ export function DashboardSidebar({ currentView, onViewChange, onLogout }: Dashbo
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <div className="flex items-center space-x-3 px-3">
-            <img 
-              src="/deepcheck-logo.svg" 
-              alt="DeepCheck Logo" 
-              className="w-10 h-10 glow-ai"
-            />
+          <div className="px-3">
             {!isCollapsed && (
               <div>
                 <h1 className="font-orbitron text-lg font-bold gradient-neon-text">

@@ -41,9 +41,9 @@ export function LandingPage({ onLogin }: LandingPageProps) {
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             <div className="flex items-center space-x-3">
               <img 
-                src="/deepcheck-logo.svg" 
+                src="./deepcheck-logo.svg" 
                 alt="DeepCheck Logo" 
-                className="w-10 h-10"
+                className="w-10 h-10 glow-ai transition-transform hover:scale-105"
               />
               <h1 className="font-orbitron text-2xl font-bold gradient-neon-text">
                 DeepCheck
@@ -71,7 +71,7 @@ export function LandingPage({ onLogin }: LandingPageProps) {
 
         {/* Hero Section */}
         <main className="flex-1 flex items-center justify-center px-6 py-12">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20 items-center">
             {/* Left Content */}
             <motion.div
               className="text-center lg:text-left space-y-8"
@@ -80,18 +80,16 @@ export function LandingPage({ onLogin }: LandingPageProps) {
               transition={{ duration: 1, delay: 0.2 }}
             >
               <div className="space-y-6">
-                {/* Large Logo */}
+                {/* Hero Title */}
                 <motion.div
                   className="flex justify-center lg:justify-start mb-6"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <img 
-                    src="/deepcheck-logo.svg" 
-                    alt="DeepCheck AI-Powered Misinformation Detection" 
-                    className="w-32 h-32 lg:w-40 lg:h-40 glow-ai"
-                  />
+                  <h1 className="font-orbitron text-6xl lg:text-8xl font-bold gradient-neon-text">
+                    
+                  </h1>
                 </motion.div>
                 
                 <motion.div
@@ -164,7 +162,7 @@ export function LandingPage({ onLogin }: LandingPageProps) {
 
             {/* Right Content - Hero Image */}
             <motion.div
-              className="relative"
+              className="relative ml-6 lg:ml-12 xl:ml-16"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
