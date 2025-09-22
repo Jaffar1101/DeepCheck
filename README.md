@@ -53,7 +53,7 @@ The rapid spread of fake news and misinformation across social media and messagi
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/yourusername/DeepCheck.git
    cd DeepCheck
    ```
 
@@ -96,9 +96,10 @@ The built files will be in the `dist` directory, ready for deployment.
 
 ### Deploy to GitHub Pages
 
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
-3. Run: `npm run build && npm run deploy`
+1. Install gh-pages: `npm install --save-dev gh-pages` (already included)
+2. Build and deploy: `npm run deploy`
+3. Configure GitHub Pages in repository settings to use gh-pages branch
+4. Your app will be available at: `https://yourusername.github.io/DeepCheck`
 
 ## 🎨 Project Structure
 
