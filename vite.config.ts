@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/https://jaffar1101.github.io/DeepCheck///", // 👈 IMPORTANT: repo name here
+  base: "/DeepCheck/", // 👈 IMPORTANT: repo name here
   server: {
     host: "::",
     port: 8080,
